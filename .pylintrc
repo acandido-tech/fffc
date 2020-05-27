@@ -9,6 +9,11 @@ extension-pkg-whitelist=
 # paths.
 ignore=CVS
 
+disable=
+    C0114,
+    D203,
+    D100,
+
 # Add files or directories matching the regex patterns to the blacklist. The
 # regex matches against base names, not paths.
 ignore-patterns=

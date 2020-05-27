@@ -1,0 +1,4 @@
+Birth date,12,date
+First name,11,string
+Last name,15,string
+Weight,2,numeric
