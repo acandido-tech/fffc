@@ -4,7 +4,7 @@ from file_converter.data.data_parser import DataParser
 
 class TestDataParserMetadata:
     METADATA_FILE_PATH = f"{RESOURCES_PATH}/fixed_file_metadata.csv"
-    OTHER_METADATA_FILE_PATH = f"{RESOURCES_PATH}/fixed_file_metadata_2.csv"
+    OTHER_METADATA_FILE_PATH = f"{RESOURCES_PATH}/fixed_file_metadata.2.csv"
 
     def setup_method(self):
         """Init datas for tests"""

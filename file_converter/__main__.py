@@ -3,6 +3,9 @@ from file_converter import app
 from argparse import ArgumentParser
 from logging import info, error, basicConfig, INFO
 from file_converter.data.file_checker import FileChecker
+from file_converter.config.config import \
+    EXPECTED_FIXED_FILE_EXT, \
+    EXPECTED_METADATA_FILE_EXT
 
 # define log level (DEBUG, INFO...)
 basicConfig(level=INFO)
@@ -24,12 +27,17 @@ def main(command_line_arguments=None):
 
     METADATA = args.metadata
     FILE = args.file
+    file_task_list = [
+        [METADATA, EXPECTED_METADATA_FILE_EXT],
+        [FILE, EXPECTED_FIXED_FILE_EXT]
+    ]
 
     try:
         info('#################### Start convertion ######################')
-        for file_path in [METADATA, FILE]:
+        for file_path_list in file_task_list:
+            file_path, file_ext = file_path_list
             file_instance = FileChecker(file_path)
-            if not file_instance.is_available():
+            if not file_instance.is_available(file_ext):
                 raise Warning(f'{file_path} is not available')
                 break
     except Exception as exception:
