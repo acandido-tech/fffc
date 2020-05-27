@@ -1,7 +1,7 @@
 from file_converter.data.data_parser import DataParser
 
 
-class TestDataParser:
+class TestDataParserFormatData:
     def setup_method(self):
         """Init datas for tests"""
         self.tests_dict_string_list = [

@@ -26,3 +26,16 @@ class DataParser:
             ).strftime(DATE_FORMAT_OUTPUT)
 
         return text
+
+    @staticmethod
+    def build_metadata_list(metadata_data=list()):
+        """Parse metadata content to build data list"""
+        metadata_formatted_list = list()
+        for index, row in enumerate(metadata_data):
+            m_label, m_length, m_type_data = row.split(',')
+            metadata_formatted_list.append({
+                'm_label': m_label.strip(),
+                'm_length': m_length.strip(),
+                'm_type': m_type_data.strip(),
+            })
+        return metadata_formatted_list

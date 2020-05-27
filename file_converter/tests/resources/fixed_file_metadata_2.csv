@@ -1,0 +1,7 @@
+Birth date,12,date
+First name,11,string
+Last name,15,string
+Weight,2,numeric
+City code,3,string
+Country code,3,string
+Iata,3,numeric

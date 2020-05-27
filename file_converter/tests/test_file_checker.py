@@ -4,7 +4,7 @@ from file_converter.data.file_checker import FileChecker
 
 
 class TestFileChecker:
-    METADATA_FILE_PATH = f"{RESOURCES_PATH}/fixed_file_metadata.txt"
+    METADATA_FILE_PATH = f"{RESOURCES_PATH}/fixed_file_metadata.csv"
     FIXED_FILE_PATH = f"{RESOURCES_PATH}/fixed_file.txt"
     NO_EXISTING_FILE_PATH = f"{RESOURCES_PATH}/error.txt"
 
