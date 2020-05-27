@@ -1,5 +1,6 @@
 from os.path import isfile
 
+
 class FileChecker:
     """Class in charge of file checking"""
 
