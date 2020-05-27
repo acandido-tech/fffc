@@ -1,0 +1,8 @@
+#virtualenv folder
+env/
+
+#visual_studio_code
+.vscode/
+
+file_converter/__pycache__/
+
