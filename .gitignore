@@ -5,6 +5,7 @@ env/
 .vscode/
 
 file_converter/__pycache__/
+file_converter/config/__pycache__/
 file_converter/data/__pycache__/
 file_converter/tests/__pycache__/
 
