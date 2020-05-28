@@ -1,3 +1,4 @@
+from pytest import raises
 from file_converter.config.config import RESOURCES_PATH
 from file_converter.data.data_parser import DataParser
 
@@ -83,3 +84,13 @@ class TestDataParserMetadata:
 
     def test_data_parser_build_metadata_list(self):
         self._run_loop_on_tests_data(self.tests_metadata_formatter_list)
+
+    def test_data_parser_build_metadata_exceptoin(self):
+        """Test exception raised for invalid file type column"""
+        with raises(Exception):
+            assert DataParser.build_metadata_list(
+                [
+                    'Birth date,10,date\n',
+                    'Other value,15,new_type\n',
+                ]
+            )
