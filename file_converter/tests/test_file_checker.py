@@ -1,6 +1,8 @@
 from pytest import raises
-from file_converter.config.config import RESOURCES_PATH, \
+from file_converter.config.config import (
+    RESOURCES_PATH,
     EXPECTED_FIXED_FILE_EXT
+)
 from file_converter.data.file_checker import FileChecker
 
 

@@ -42,8 +42,47 @@ class DataParser:
 
             metadata_formatted_list.append({
                 'm_label': m_label.strip(),
-                'm_length': m_length.strip(),
+                'm_length': int(m_length.strip()),
                 'm_type': m_type_data.strip(),
             })
 
         return metadata_formatted_list
+
+    @staticmethod
+    def build_content_list(fixed_file_data, metadata_list):
+        """Build content using metadata and raw content"""
+        result_content = list()
+        expected_line_length = sum(int(v['m_length']) for v in metadata_list)
+
+        for row in fixed_file_data:
+            line = row.strip()
+            if len(line) > expected_line_length:
+                raise Exception(
+                    f'Different length line, metadata {expected_line_length} \
+                        chars vs row {len(line)} chars'
+                )
+
+            pointer = 0
+            result_line = list()
+            for data_hash in metadata_list:
+                current_length = data_hash['m_length']
+                next_pointer_pos = pointer + current_length
+                new_content = line[pointer:next_pointer_pos]
+                if not new_content:
+                    raise Exception(
+                        "Error occurs on parsing file \
+                            please verify file content"
+                    )
+
+                value = DataParser.format_data(
+                    line[pointer:next_pointer_pos],
+                    data_hash['m_type']
+                )
+                # add new content to current line
+                result_line.append(value)
+                pointer = next_pointer_pos
+
+            # add new line to result content
+            result_content.append(result_line)
+
+        return result_content
