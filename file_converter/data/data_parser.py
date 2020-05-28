@@ -1,3 +1,6 @@
+# -*- coding: utf-8 -*-
+"""DataParser class"""
+
 from datetime import datetime
 from file_converter.config.config import (
     DATE_FORMAT_INPUT,
@@ -11,6 +14,7 @@ from file_converter.config.config import (
 
 class DataParser:
     """Class in charge of data parsing"""
+
     @staticmethod
     def format_data(text='', data_type=STRING_TYPE):
         """Format data"""
@@ -31,10 +35,10 @@ class DataParser:
         return text
 
     @staticmethod
-    def build_metadata_list(metadata_data=list()):
+    def build_metadata_list(metadata_data):
         """Parse metadata content to build data list"""
         metadata_formatted_list = list()
-        for index, row in enumerate(metadata_data):
+        for row in metadata_data:
             m_label, m_length, m_type_data = row.split(',')
 
             if m_type_data.strip() not in AVAILABLE_DATA_TYPE:
