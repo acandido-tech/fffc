@@ -1,5 +1,8 @@
 from pytest import raises
-from file_converter.config.config import RESOURCES_PATH
+from file_converter.config.config import (
+    RESOURCES_PATH,
+    FILE_ENCODING_TYPE as f_type
+)
 from file_converter.data.data_parser import DataParser
 
 
@@ -77,7 +80,7 @@ class TestDataParserMetadata:
 
     def _run_loop_on_tests_data(self, data_dict_list):
         for file_path, expected_result in data_dict_list:
-            metadata_data = open(file_path, mode='r', encoding='UTF-8')
+            metadata_data = open(file_path, mode='r', encoding=f_type)
             assert DataParser.build_metadata_list(
                 metadata_data
             ) == expected_result
