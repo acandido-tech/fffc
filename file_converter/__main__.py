@@ -5,13 +5,13 @@ from argparse import ArgumentParser
 from logging import info, error, basicConfig, INFO
 from file_converter import app
 from file_converter.data.file_checker import FileChecker
-from file_converter.config.config import \
-    EXPECTED_FIXED_FILE_EXT, \
+from file_converter.config.config import (
+    EXPECTED_FIXED_FILE_EXT,
     EXPECTED_METADATA_FILE_EXT
+)
 
 # define log level (DEBUG, INFO...)
 basicConfig(level=INFO)
-
 
 def parse_args(args=None):
     """Parse cli arguments"""
