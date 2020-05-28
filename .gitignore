@@ -4,5 +4,5 @@ env/
 #visual_studio_code
 .vscode/
 
-file_converter/__pycache__/
+__pycache__/
 
