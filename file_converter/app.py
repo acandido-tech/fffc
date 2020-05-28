@@ -1,4 +1,6 @@
 # -*- coding: utf-8 -*-
+"""App execution"""
+
 from csv import writer
 from file_converter.data.data_parser import DataParser
 from file_converter.config.config import (
@@ -22,14 +24,14 @@ def run(metadata_path, file_path):
     )
 
     with open(
-        build_file_path(
-            PUBLIC_CSV_PATH,
-            '/converted_file',
-            CONVERTED_FILE_EXT
-        ),
-        'w',
-        encoding=f_type,
-        newline='\n',
+            build_file_path(
+                PUBLIC_CSV_PATH,
+                '/converted_file',
+                CONVERTED_FILE_EXT
+            ),
+            'w',
+            encoding=f_type,
+            newline='\n',
     ) as csvfile:
         filewriter = writer(csvfile, delimiter=DELIMITER_FILE_OUTPUT)
 

@@ -1,3 +1,6 @@
+# -*- coding: utf-8 -*-
+"""Testing class for FileChecker"""
+
 from pytest import raises
 from file_converter.config.config import (
     RESOURCES_PATH,
@@ -7,6 +10,7 @@ from file_converter.data.file_checker import FileChecker
 
 
 class TestFileChecker:
+    """Class to manage file_checker tests"""
     METADATA_FILE_PATH = f"{RESOURCES_PATH}/fixed_file_metadata.csv"
     FIXED_FILE_PATH = f"{RESOURCES_PATH}/fixed_file.txt"
     NO_EXISTING_FILE_PATH = f"{RESOURCES_PATH}/error.txt"

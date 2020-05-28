@@ -1,7 +1,9 @@
 # -*- coding: utf-8 -*-
-from file_converter import app
+"""Main entry of application"""
+
 from argparse import ArgumentParser
 from logging import info, error, basicConfig, INFO
+from file_converter import app
 from file_converter.data.file_checker import FileChecker
 from file_converter.config.config import \
     EXPECTED_FIXED_FILE_EXT, \
@@ -22,14 +24,13 @@ def parse_args(args=None):
 
 def main(command_line_arguments=None):
     """Main method in charge of cli args parser"""
-
     args = parse_args(command_line_arguments)
 
-    METADATA = args.metadata
-    FILE = args.file
+    metadata_path = args.metadata
+    fixed_file_path = args.file
     file_task_list = [
-        [METADATA, EXPECTED_METADATA_FILE_EXT],
-        [FILE, EXPECTED_FIXED_FILE_EXT]
+        [metadata_path, EXPECTED_METADATA_FILE_EXT],
+        [fixed_file_path, EXPECTED_FIXED_FILE_EXT]
     ]
 
     try:
@@ -39,12 +40,11 @@ def main(command_line_arguments=None):
             file_instance = FileChecker(file_path)
             if not file_instance.is_available(file_ext):
                 raise Warning(f'{file_path} is not available')
-                break
     except Exception as exception:
         error(exception)
     else:
         # execute converter file
-        app.run(METADATA, FILE)
+        app.run(metadata_path, fixed_file_path)
         info('#################### Convertion is done ######################')
 
 

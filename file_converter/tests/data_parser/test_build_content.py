@@ -1,3 +1,6 @@
+# -*- coding: utf-8 -*-
+"""Testing class for DataParser->buildContentList"""
+
 from pytest import raises
 from file_converter.data.data_parser import DataParser
 from file_converter.config.config import (
@@ -7,6 +10,7 @@ from file_converter.config.config import (
 
 
 class TestDataParserBuildContentData:
+    """Class to manage dataParser buildContentData tests"""
     def setup_method(self):
         """Init datas for tests"""
         self.default_metadata_list = [

@@ -1,7 +1,11 @@
+# -*- coding: utf-8 -*-
+"""Testing class for DataParser->format_data"""
+
 from file_converter.data.data_parser import DataParser
 
 
 class TestDataParserFormatData:
+    """Class to manage dataParser format_data tests"""
     def setup_method(self):
         """Init datas for tests"""
         self.tests_dict_string_list = [

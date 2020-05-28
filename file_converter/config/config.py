@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+"""Config file"""
 
 RESOURCES_PATH = 'file_converter/tests/resources'
 PUBLIC_CSV_PATH = 'public/csv'

@@ -1,3 +1,6 @@
+# -*- coding: utf-8 -*-
+"""Testing class for DataParser->build_metadata_list"""
+
 from pytest import raises
 from file_converter.config.config import (
     RESOURCES_PATH,
@@ -7,6 +10,7 @@ from file_converter.data.data_parser import DataParser
 
 
 class TestDataParserMetadata:
+    """Class to manage dataParser build_metadata_list tests"""
     METADATA_FILE_PATH = f"{RESOURCES_PATH}/fixed_file_metadata.csv"
     OTHER_METADATA_FILE_PATH = f"{RESOURCES_PATH}/fixed_file_metadata.2.csv"
 
@@ -88,7 +92,7 @@ class TestDataParserMetadata:
     def test_data_parser_build_metadata_list(self):
         self._run_loop_on_tests_data(self.tests_metadata_formatter_list)
 
-    def test_data_parser_build_metadata_exceptoin(self):
+    def test_data_parser_build_metadata_exception(self):
         """Test exception raised for invalid file type column"""
         with raises(Exception):
             assert DataParser.build_metadata_list(

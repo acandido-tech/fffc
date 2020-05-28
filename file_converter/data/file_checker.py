@@ -1,3 +1,6 @@
+# -*- coding: utf-8 -*-
+"""FileChecker class"""
+
 from os.path import isfile
 
 
@@ -12,11 +15,13 @@ class FileChecker:
         return self.file_path
 
     def is_available(self, file_type=DEFAULT_FILE_TYPE_EXT):
+        """Check availability of current file path"""
         if self.file_path is None:
             raise Exception(
                 'Please indicate a path'
             )
-        elif isfile(self.file_path) is False:
+
+        if isfile(self.file_path) is False:
             raise FileNotFoundError(
                 f'Please indicate a correct path : {self.file_path}'
             )

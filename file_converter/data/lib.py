@@ -1,3 +1,6 @@
+# -*- coding: utf-8 -*-
+"""Lib with functions"""
+
 from datetime import datetime
 from file_converter.config.config import DATE_FORMAT_CSV
 
@@ -11,7 +14,5 @@ def build_file_path(folder_path, filename, ext='txt'):
         now.strftime(DATE_FORMAT_CSV),
         '.' + ext,
     ])
-
-    print(final_path)
 
     return final_path
