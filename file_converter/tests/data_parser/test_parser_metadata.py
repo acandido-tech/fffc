@@ -17,22 +17,22 @@ class TestDataParserMetadata:
                 self.METADATA_FILE_PATH, [
                     {
                         'm_label': 'Birth date',
-                        'm_length': '10',
+                        'm_length': 10,
                         'm_type': 'date'
                     },
                     {
                         'm_label': 'First name',
-                        'm_length': '15',
+                        'm_length': 15,
                         'm_type': 'string'
                     },
                     {
                         'm_label': 'Last name',
-                        'm_length': '15',
+                        'm_length': 15,
                         'm_type': 'string'
                     },
                     {
                         'm_label': 'Weight',
-                        'm_length': '5',
+                        'm_length': 5,
                         'm_type': 'numeric'
                     }
                 ]
@@ -41,37 +41,37 @@ class TestDataParserMetadata:
                 self.OTHER_METADATA_FILE_PATH, [
                     {
                         'm_label': 'Birth date',
-                        'm_length': '12',
+                        'm_length': 12,
                         'm_type': 'date'
                     },
                     {
                         'm_label': 'First name',
-                        'm_length': '11',
+                        'm_length': 11,
                         'm_type': 'string'
                     },
                     {
                         'm_label': 'Last name',
-                        'm_length': '15',
+                        'm_length': 15,
                         'm_type': 'string'
                     },
                     {
                         'm_label': 'Weight',
-                        'm_length': '2',
+                        'm_length': 2,
                         'm_type': 'numeric'
                     },
                     {
                         'm_label': 'City code',
-                        'm_length': '3',
+                        'm_length': 3,
                         'm_type': 'string'
                     },
                     {
                         'm_label': 'Country code',
-                        'm_length': '3',
+                        'm_length': 3,
                         'm_type': 'string'
                     },
                     {
                         'm_label': 'Iata',
-                        'm_length': '3',
+                        'm_length': 3,
                         'm_type': 'numeric'
                     }
                 ]
